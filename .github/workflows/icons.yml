@@ -1,11 +1,8 @@
-name: 生成插件图标
+name: 生成插件图标(手动)
 
+# 仅手动触发:仓库已包含正确图标,避免 CI 环境缺中文字体覆盖图标
 on:
   workflow_dispatch:
-  push:
-    paths-ignore:
-      - 'icons/**'
-      - '.github/**'
 
 permissions:
   contents: write
@@ -35,6 +32,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "图标无变化,跳过提交"
           else
-            git commit -m "chore: 自动生成插件图标"
+            git commit -m "chore: 手动重新生成插件图标"
             git push
           fi
