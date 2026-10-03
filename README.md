@@ -1,5 +1,7 @@
 # 简译 · jianyi-translate
 
+**简体中文** | [English](README.en.md)
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Version](https://img.shields.io/badge/version-1.3.0-blue)
 ![Platform](https://img.shields.io/badge/Chrome%20%2F%20Edge-Manifest%20V3-orange)
@@ -63,6 +65,9 @@ jianyi-translate/
 ├─ popup.html/.js     工具栏弹窗:快速翻译、设置、整页翻译按钮
 ├─ icons/             图标
 ├─ tools/gen_icons.py 图标生成脚本
+├─ .github/           CI:标签自动发版、图标生成
+├─ CONTRIBUTING.md    贡献指南
+├─ README.en.md       English readme
 └─ README.md
 ```
 
@@ -73,6 +78,10 @@ jianyi-translate/
 - **翻译失败?** 各引擎均有免费限额,突发大量请求会限流;插件已自动限速、切换引擎并重试。弹窗「测试服务」可随时检查链路。
 - **中文页面会翻译吗?** 会自动识别,页面文字已是目标语言时保持原文不重复翻译;简繁之间仍会互译。
 - **隐私**:仅当你主动触发翻译时,所选文本/页面文本段才会发送到对应翻译服务器(有道/DeepL/MyMemory);翻译缓存只存在本机浏览器本地,不上传任何服务器。
+
+## 参与贡献
+
+欢迎提交 Issue 与 PR,流程与规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 声明 / Disclaimer
 
