@@ -1,0 +1,40 @@
+name: 生成插件图标
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - 'icons/**'
+      - '.github/**'
+
+permissions:
+  contents: write
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装 Pillow 并生成图标
+        run: |
+          pip install pillow
+          python tools/gen_icons.py
+
+      - name: 提交图标
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add icons
+          if git diff --cached --quiet; then
+            echo "图标无变化,跳过提交"
+          else
+            git commit -m "chore: 自动生成插件图标"
+            git push
+          fi

@@ -1,0 +1,124 @@
+/* 简译 · 内容脚本样式（全部加 !important 抵抗网站自身样式） */
+
+#jy-layer-root {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  z-index: 2147483647 !important;
+  font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif !important;
+}
+
+/* 划词触发按钮 */
+#jy-layer-root .jy-trigger {
+  position: fixed !important;
+  display: none;
+  width: 30px !important;
+  height: 30px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #1677ff !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  line-height: 1 !important;
+  box-shadow: 0 4px 12px rgba(22, 119, 255, .35) !important;
+}
+#jy-layer-root .jy-trigger:hover {
+  background: #0958d9 !important;
+}
+
+/* 翻译结果气泡 */
+#jy-layer-root .jy-bubble {
+  position: fixed !important;
+  width: 340px !important;
+  max-width: calc(100vw - 16px) !important;
+  background: #fff !important;
+  color: #1f2328 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18) !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  letter-spacing: normal !important;
+}
+#jy-layer-root .jy-bubble-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 7px 10px !important;
+  border-bottom: 1px solid #f0f1f3 !important;
+  color: #6b7280 !important;
+  font-size: 12px !important;
+}
+#jy-layer-root .jy-bubble-actions {
+  display: flex !important;
+  gap: 6px !important;
+}
+#jy-layer-root .jy-btn {
+  border: 1px solid #d9d9d9 !important;
+  background: #fff !important;
+  color: #4b5563 !important;
+  border-radius: 6px !important;
+  padding: 2px 8px !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  line-height: 1.4 !important;
+}
+#jy-layer-root .jy-btn:hover {
+  border-color: #1677ff !important;
+  color: #1677ff !important;
+}
+#jy-layer-root .jy-bubble-body {
+  padding: 10px 12px !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  user-select: text !important;
+  max-height: 220px !important;
+  overflow: auto !important;
+  font-size: 14px !important;
+}
+#jy-layer-root .jy-err {
+  color: #d4380d !important;
+}
+
+/* 顶部进度/提示条 */
+#jy-layer-root .jy-bar {
+  position: fixed !important;
+  top: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(17, 24, 39, .92) !important;
+  color: #fff !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  gap: 10px !important;
+  align-items: center !important;
+  font-size: 13px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .25) !important;
+}
+#jy-layer-root .jy-bar .jy-btn {
+  background: rgba(255, 255, 255, .14) !important;
+  border-color: rgba(255, 255, 255, .4) !important;
+  color: #fff !important;
+}
+#jy-layer-root .jy-bar .jy-btn:hover {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+/* 双语对照插入的译文 */
+#jy-layer-root ~ * .jy-bi, .jy-bi {
+  color: #2563eb !important;
+  border-bottom: 1px dashed #93c5fd !important;
+  margin: 0 2px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}

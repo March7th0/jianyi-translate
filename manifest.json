@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "简译 · 网页翻译(免翻墙)",
+  "short_name": "简译",
+  "version": "1.3.0",
+  "description": "划词翻译、整页双语翻译、输入即时翻译。有道/DeepL/MyMemory 多引擎自动切换,国内直连,无需代理与 API Key。",
+  "permissions": ["contextMenus", "storage", "scripting", "unlimitedStorage"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "简译 · 网页翻译",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "translate-selection": {
+      "suggested_key": { "default": "Alt+T" },
+      "description": "翻译选中的文字"
+    },
+    "toggle-page-translate": {
+      "suggested_key": { "default": "Alt+P" },
+      "description": "翻译或恢复整个页面"
+    }
+  }
+}
