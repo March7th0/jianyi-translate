@@ -1,0 +1,32 @@
+name: 发布 Release
+
+# 推送 v* 标签即自动:打包插件 zip → 创建 Release 并上传附件
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 打包插件 zip
+        run: |
+          TAG=${GITHUB_REF_NAME}
+          mkdir -p "jianyi-translate-${TAG}"
+          cp -r manifest.json background.js content.js content.css popup.html popup.js icons README.md "jianyi-translate-${TAG}/"
+          mkdir -p dist
+          zip -qr "dist/jianyi-translate-${TAG}.zip" "jianyi-translate-${TAG}"
+
+      - name: 创建 Release 并上传附件
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
+          make_latest: true
